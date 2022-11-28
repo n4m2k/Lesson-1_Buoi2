@@ -48,10 +48,7 @@ const HomePage = () => {
       newContact.splice(index, 1, contact);
       setContacts(newContact);
     } else {
-      setContacts((prev) => [
-        ...prev,
-        { ...contact, id: new Date().toDateString() },
-      ]);
+      setContacts((prev) => [...prev, { ...contact, id: Math.random() * 101 }]);
     }
   };
   const handleDelete = (id) => {
